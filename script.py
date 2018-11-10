@@ -35,4 +35,14 @@ def location(message: Message):
     lon = message.location.longitude
     lat = message.location.latititude
     print('Широта: {} Долгота: {}'.format(lon,lat))
+
+@bot.callback_query_handler(func = lambda call:True)
+def call_back_pay(call):
+    if call.data == 'cash':
+        bot.send_message(call.message.chat.id,text='Вы оплатили наличными')
+    if call.data == 'card':
+        bot.send_message(call.message.chat.id,text='Вы оплатили наличными')
+
+
+
 bot.polling(timeout=60)

@@ -10,6 +10,10 @@ btn_payment = types.KeyboardButton('Способы оплаты')
 btn_delivery = types.KeyboardButton('Способы доставки')
 markup_menu.add(btn_adress,btn_payment,btn_delivery)
 
+markup_inline = types.InlineKeyboardMarkup()
+btn_cash = types.InlineKeyboardButton('Nalichnye', callback_data='cash')
+btn_card = types.InlineKeyboardButton('Beznal', callback_data='card')
+markup_inline.add(btn_card,btn_cash)
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(func = lambda message:True,commands=['start', 'help'])
@@ -22,7 +26,7 @@ def echo_digits(message: Message):
         if message.text == 'Способы доставки':
             bot.reply_to(message, 'Доставка курьером, самовывоз',reply_markup = markup_menu)
         elif message.text == 'Способы оплаты':
-            bot.reply_to(message, 'Nal, beznal', reply_markup=markup_menu)
+            bot.reply_to(message, 'Следующие способы оплаты', reply_markup=markup_inline)
         else:
             bot.reply_to(message, 'Alex is good kid',reply_markup = markup_menu)
         return

@@ -13,7 +13,7 @@ markup_menu.add(btn_adress,btn_payment,btn_delivery)
 contact_inline = types.InlineKeyboardMarkup()
 btn_call = types.InlineKeyboardButton('Позвонить', callback_data='cash')
 btn_message = types.InlineKeyboardButton('Написать', callback_data='card')
-btn_number = types.InlineKeyboardButton('Оставить номер', callback_data='card')
+btn_number = types.InlineKeyboardButton('Оставить номер', callback_data='contact')
 contact_inline.add(btn_call,btn_message,btn_number)
 
 
@@ -47,8 +47,8 @@ def location(message: Message):
 
 @bot.callback_query_handler(func = lambda call:True)
 def call_back_pay(call):
-    if call.data == 'cash':
-        bot.send_message(call.message.chat.id,text='Вы оплатили наличными')
+    if call.data == 'contact':
+        bot.send_message(call.message.chat.id,text=call.message.contact)
     if call.data == 'card':
         bot.send_message(call.message.chat.id,text='Вы оплатили наличными')
 

@@ -18,10 +18,7 @@ btn_number = types.InlineKeyboardButton('Оставить номер', callback_
 contact_inline.add(btn_call,btn_message,btn_number)
 
 
-location_keyboard = types.KeyboardButton(text="send_location", request_location=True)
-contact_keyboard = types.KeyboardButton(text="send_contact", request_contact=True)
-custom_keyboard = [[ location_keyboard, contact_keyboard ]]
-reply_markup = types.ReplyKeyboardMarkup(custom_keyboard)
+
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(func = lambda message:True,commands=['start', 'help'])
@@ -37,11 +34,7 @@ def echo_digits(message: Message):
             bot.reply_to(message, 'Позвоните нам или напишите в телеграм. '
                                   'Также вы можете оставить нам свой номер и наш менеджер сам с вами свяжется',
                          reply_markup=contact_inline)
-            bot.send_message(chat_id=message.chat_id,
 
-            text = "Would you mind sharing your location and contact with me?",
-
-            reply_markup = reply_markup)
         return
 @bot.message_handler(func = lambda message:True,content_types=['location'])
 def location(message: Message):

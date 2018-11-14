@@ -6,7 +6,7 @@ from telebot.types import Message
 TOKEN = "751120059:AAGGNfinmmdqDNYLyL2hP-FeeiMnCF3vp3E"
 markup_menu = types.ReplyKeyboardMarkup(resize_keyboard = True,row_width = 1)
 btn_adress = types.KeyboardButton('Адреса точек продаж',request_contact=True)
-btn_payment = types.KeyboardButton('Наши елки')
+btn_payment = types.KeyboardButton('Наши елки',request_location=True)
 btn_delivery = types.KeyboardButton('Связаться с нами')
 
 markup_menu.add(btn_adress,btn_payment,btn_delivery)

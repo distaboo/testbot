@@ -11,7 +11,7 @@ btn_delivery = types.KeyboardButton('Связаться с нами')
 markup_menu.add(btn_adress,btn_payment,btn_delivery)
 
 contact_inline = types.InlineKeyboardMarkup()
-btn_call = types.InlineKeyboardButton('Позвонить', request_contact=True,callback_data='cash')
+btn_call = types.InlineKeyboardButton('Позвонить', callback_data='cash')
 btn_message = types.InlineKeyboardButton('Написать', callback_data='card')
 btn_number = types.InlineKeyboardButton('Оставить номер', callback_data='card')
 contact_inline.add(btn_call,btn_message,btn_number)
@@ -41,9 +41,9 @@ def location(message: Message):
     lat = message.location.latititude
     print('Широта: {} Долгота: {}'.format(lon,lat))
 
-@bot.message_handler(func = lambda message:True,content_types=['contact'])
-def location(message: Message):
-    bot.send_message(message.chat.id, text=message.contact)
+#@bot.message_handler(func = lambda message:True,content_types=['contact'])
+#def location(message: Message):
+#    bot.send_message(message.chat.id, text=message.contact)
 
 @bot.callback_query_handler(func = lambda call:True)
 def call_back_pay(call):

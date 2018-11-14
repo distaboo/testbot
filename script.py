@@ -5,7 +5,7 @@ from telebot.types import Message
 
 TOKEN = "751120059:AAGGNfinmmdqDNYLyL2hP-FeeiMnCF3vp3E"
 markup_menu = types.ReplyKeyboardMarkup(resize_keyboard = True,row_width = 1)
-btn_adress = types.KeyboardButton('Адреса точек продаж',request_contact=True)
+btn_adress = types.KeyboardButton('Адреса точек продаж')
 btn_payment = types.KeyboardButton('Наши елки',request_location=True)
 btn_delivery = types.KeyboardButton('Связаться с нами')
 
@@ -17,7 +17,9 @@ btn_message = types.InlineKeyboardButton('Написать', callback_data='card
 btn_number = types.InlineKeyboardButton('Оставить номер', callback_data='contact')
 contact_inline.add(btn_call,btn_message,btn_number)
 
-
+kb = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+kbtn1 = types.KeyboardButton("??")
+kbtn2 = types.KeyboardButton("?")
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -33,7 +35,7 @@ def echo_digits(message: Message):
         elif message.text == 'Адреса точек продаж':
             bot.reply_to(message, 'Позвоните нам или напишите в телеграм. '
                                   'Также вы можете оставить нам свой номер и наш менеджер сам с вами свяжется',
-                         reply_markup=contact_inline)
+                         reply_markup=kb)
 
         return
 @bot.message_handler(func = lambda message:True,content_types=['location'])

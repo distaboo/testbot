@@ -31,7 +31,7 @@ def command_handler(message: Message):
 @bot.message_handler(func = lambda message:True,content_types=['text'])
 def echo_digits(message: Message):
         if message.text == 'Способы доставки':
-            bot.reply_to(message, 'Доставка курьером, самовывоз',reply_markup = markup_menu)
+            bot.reply_to(message, 'Доставка курьером, самовывоз',reply_markup = kb)
         elif message.text == 'Адреса точек продаж':
             bot.reply_to(message, 'Позвоните нам или напишите в телеграм. '
                                   'Также вы можете оставить нам свой номер и наш менеджер сам с вами свяжется',

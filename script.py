@@ -16,9 +16,7 @@ markup.row(itembtna, itembtnv)
 markup.row(itembtnc, itembtnd, itembtne)
 
 
-@bot.message_handler(func = lambda message:True,commands=['start', 'help'])
-def command_handler(message: Message):
-    bot.reply_to(message, 'Hello', reply_markup=markup_menu)
+
 
 @bot.edited_message_handler(func = lambda message:True,content_types=['text'])
 @bot.message_handler(func = lambda message:True,content_types=['text'])

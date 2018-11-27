@@ -16,12 +16,12 @@ markup.row(itembtna, itembtnv)
 markup.row(itembtnc, itembtnd)
 
 main_markup = types.ReplyKeyboardMarkup()
-itembtnPhoto = types.KeyboardButton('Позвонить')
-itembtnCall = types.KeyboardButton('Написать')
-itembtnAdress = types.KeyboardButton('Оставить номер')
-main_markup.add(itembtnAdress,itembtnPhoto,itembtnCall)
-
-
+itembtnPhoto = types.KeyboardButton('Фото наших елок')
+itembtnCall = types.KeyboardButton('Связаться с нами')
+itembtnAdress = types.KeyboardButton('Адрес точки продаж')
+main_markup.row(itembtnAdress)
+main_markup.row(itembtnPhoto)
+main_markup.row(itembtnCall)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -29,6 +29,6 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-    bot.send_message(message.chat.id, "hello", reply_markup=markup)
-
+    if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "hello", reply_markup=markup)
+    elif (message.text == 'Вернуться в меню'): bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
 bot.polling()

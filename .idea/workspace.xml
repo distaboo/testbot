@@ -27,8 +27,8 @@
       <file leaf-file-name="script.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="27" column="71" lean-forward="false" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+            <state relative-caret-position="433">
+              <caret line="32" column="114" lean-forward="false" selection-start-line="32" selection-start-column="114" selection-end-line="32" selection-end-column="114" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -326,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543311894912</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1">
+      <created>1543314857685</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1543314857686</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -691,8 +698,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="27" column="71" lean-forward="false" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+        <state relative-caret-position="433">
+          <caret line="32" column="114" lean-forward="false" selection-start-line="32" selection-start-column="114" selection-end-line="32" selection-end-column="114" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

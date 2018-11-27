@@ -18,11 +18,12 @@ markup.row(itembtnc, itembtnd, itembtne)
 
 
 
-@bot.edited_message_handler(func = lambda message:True,content_types=['text'])
-@bot.message_handler(func = lambda message:True,content_types=['text'])
-def echo_digits(message: Message):
-        bot.send_message(message.chat_id, "Choose one letter:", reply_markup=markup)
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+	bot.reply_to(message, "Howdy, how are you doing?")
 
-        return
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+	bot.reply_to(message, message.text)
 
 bot.polling(timeout=60)

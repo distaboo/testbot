@@ -51,14 +51,14 @@ def echo_all(message):
                          reply_markup=main_markup)
     else:
         #bot.send_message(admin_id, settings.NEW_FEEDBACK)
-        bot.send_message(message.chat.id,
-                         "ахахахах",
-                         reply_markup=main_markup)
+
         keyboard = types.InlineKeyboardMarkup()
         callback_button_yes = types.InlineKeyboardButton("Отправить", callback_data='yes')
         callback_button_no = types.InlineKeyboardButton("Вернуться", callback_data='no')
         keyboard.add(callback_button_yes, callback_button_no)
-
+        bot.send_message(message.chat.id,
+                         "ахахахах",
+                         reply_markup=keyboard)
 
 
 bot.polling()

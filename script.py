@@ -36,11 +36,12 @@ def echo_all(message):
                          "Мы находимся на парковке Сибирского Молла. Вы легко найдете нас по запаху настоящей ели.",
                          reply_markup=main_markup)
         bot.send_location(message.chat.id, 55.038377, 82.962474)
-    elif (message.text == 'Адрес точки продаж'):
+    elif (message.text == 'Фото наших елок'):
         bot.send_message(message.chat.id,
                          "Вот таких красавиц мы хотим вам предложить.",
                          reply_markup=main_markup)
         photo = open('1.png', 'rb')
-        bot.send_photo(message.chat.id, photo)
+        for ph in photo:
+            bot.send_photo(message.chat.id, ph)
 
 bot.polling()

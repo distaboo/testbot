@@ -57,7 +57,7 @@ def echo_all(message):
         callback_button_no = types.InlineKeyboardButton("Вернуться", callback_data='no')
         keyboard.add(callback_button_yes, callback_button_no)
         bot.send_message(message.chat.id,
-
+                         " ",
                          reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: True)

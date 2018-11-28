@@ -41,5 +41,6 @@ def echo_all(message):
                          "Вот таких красавиц мы хотим вам предложить.",
                          reply_markup=main_markup)
         bot.send_photo(message.chat.id, open('1.png', 'rb'))
+        bot.send_photo(message.chat.id, open('2.png', 'rb'))
 
 bot.polling()

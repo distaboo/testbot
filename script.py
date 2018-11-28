@@ -32,6 +32,16 @@ def echo_all(message):
     if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "hello", reply_markup=markup)
     elif (message.text == 'Вернуться в меню'): bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
     elif (message.text == 'Адрес точки продаж'):
+        bot.send_message(message.chat.id,
+                         "Мы находимся на парковке Сибирского Молла. Вы легко найдете нас по запаху настоящей ели.",
+                         reply_markup=main_markup)
         bot.send_location(message.chat.id, 55.038377, 82.962474)
-        bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
+    elif (message.text == 'Адрес точки продаж'):
+        bot.send_message(message.chat.id,
+                         "Вот таких красавиц мы хотим вам предложить.",
+                         reply_markup=main_markup)
+        photo = [open('1.png', 'rb'), open('2.png', 'rb')]
+        for ph in photo:
+            bot.send_photo(message.chat.id, ph)
+
 bot.polling()

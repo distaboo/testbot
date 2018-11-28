@@ -31,4 +31,7 @@ def send_welcome(message):
 def echo_all(message):
     if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "hello", reply_markup=markup)
     elif (message.text == 'Вернуться в меню'): bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
+    elif (message.text == 'Адрес точки продаж'):
+        bot.send_location(message.chat.id, 55.038377, 82.962474)
+        bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
 bot.polling()

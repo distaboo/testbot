@@ -51,27 +51,14 @@ def echo_all(message):
                          reply_markup=main_markup)
     else:
         #bot.send_message(admin_id, settings.NEW_FEEDBACK)
+        bot.send_message(message.chat.id,
+                         "ахахахах",
+                         reply_markup=main_markup)
         keyboard = types.InlineKeyboardMarkup()
         callback_button_yes = types.InlineKeyboardButton("Отправить", callback_data='yes')
         callback_button_no = types.InlineKeyboardButton("Вернуться", callback_data='no')
         keyboard.add(callback_button_yes, callback_button_no)
 
-@bot.callback_query_handler(func=lambda call: True)
-def callback_inline(call):
-    print("callback handler")
-    if call.message:
-        if call.data == "yes":
-            bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 2)
-            # TODO: find another way to forward message (without id-2)
-            bot.edit_message_text(chat_id=call.message.chat.id,
-                                  message_id=call.message.message_id,
-                                  text="Отправлено!")
 
-        elif call.data == "no":
-            bot.send_message(admin_id, "@" + call.from_user.username + "Хотел написать, но не написал")
-            # TODO: user can be without USERNAME?
-            bot.edit_message_text(chat_id=call.message.chat.id,
-                                  message_id=call.message.message_id,
-                                  text="(")
 
 bot.polling()

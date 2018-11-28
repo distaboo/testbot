@@ -60,5 +60,22 @@ def echo_all(message):
                          "ахахахах",
                          reply_markup=keyboard)
 
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline(call):
+    print("callback handler")
+    if call.message:
+        if call.data == "yes":
+            bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 2)
+            # TODO: find another way to forward message (without id-2)
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                                  message_id=call.message.message_id,
+                                  text="Отправлено")
+
+        elif call.data == "no":
+            bot.send_message(admin_id, "@" + call.from_user.username + "Yt jnghfdbk")
+            # TODO: user can be without USERNAME?
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                                  message_id=call.message.message_id,
+                                  text="(")
 
 bot.polling()

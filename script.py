@@ -60,5 +60,13 @@ def echo_all(message):
                          " dsf",
                          reply_markup=keyboard)
 
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline(call):
+    if call.message:
+        if call.data == "yes":
+            bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 1)
+        elif call.data == "no":
+            bot.send_message(admin_id, "@" + call.from_user.username + "Yt jnghfdbk")
+
 
 bot.polling()

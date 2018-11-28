@@ -42,5 +42,8 @@ def echo_all(message):
                          reply_markup=main_markup)
         bot.send_photo(message.chat.id, open('1.png', 'rb'))
         bot.send_photo(message.chat.id, open('2.png', 'rb'))
+    elif (message.text == 'Позвонить'):
+        bot.send_contact(message.chat.id,+79231513104,'Алексей')
+
 
 bot.polling()

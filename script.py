@@ -57,7 +57,7 @@ def echo_all(message):
         callback_button_no = types.InlineKeyboardButton("Вернуться", callback_data='no')
         keyboard.add(callback_button_yes, callback_button_no)
         bot.send_message(message.chat.id,
-                         "ахахахах",
+
                          reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -65,7 +65,7 @@ def callback_inline(call):
     print("callback handler")
     if call.message:
         if call.data == "yes":
-            bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 2)
+            bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 1)
             # TODO: find another way to forward message (without id-2)
             bot.edit_message_text(chat_id=call.message.chat.id,
                                   message_id=call.message.message_id,

@@ -69,7 +69,7 @@ def callback_inline(call):
             bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 1)
 
         elif call.data == "no":
-            bot.send_message(admin_id, "@" + call.from_user.username + "Не удалось")
+            bot.send_message(admin_id, "@" + call.message.from_user.username + " Не стал отправлять сообщение")
 
 
 

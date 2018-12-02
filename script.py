@@ -32,8 +32,8 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-    if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "hello", reply_markup=markup)
-    elif (message.text == 'Вернуться в меню'): bot.send_message(message.chat.id, "hello", reply_markup=main_markup)
+    if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "Выберете удобный вам способ", reply_markup=markup)
+    elif (message.text == 'Вернуться в меню'): bot.send_message(message.chat.id, "Выберете нужное действие", reply_markup=main_markup)
     elif (message.text == 'Адрес точки продаж'):
         bot.send_message(message.chat.id,
                          "Мы находимся на парковке Сибирского Молла. Вы легко найдете нас по запаху настоящей ели.",

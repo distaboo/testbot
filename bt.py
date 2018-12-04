@@ -78,7 +78,7 @@ class bt(object):
             if call.message:
                 if call.data == "yes":
                     bot.forward_message(admin_id, call.message.chat.id, call.message.message_id - 1)
-
+                    bot.send_message(call.message.chat.id, "Ваше сообщение отправлено", reply_markup=main_markup)
                 elif call.data == "no":
                     bot.send_message(admin_id, "@" + call.message.from_user.username + " Не стал отправлять сообщение")
 

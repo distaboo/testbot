@@ -5,17 +5,18 @@ from telebot.types import Message
 
 
 class bt(object):
-
-
+    #bot = None;
+    #admin_id = None;
     """docstring"""
 
     def __init__(self,token,admin_id):
         self.token = token
-
-
-
+        self.bot = telebot.TeleBot(self.token)
+        self.admin_id = admin_id
+    def strat(self):
         #TOKEN = "751120059:AAGGNfinmmdqDNYLyL2hP-FeeiMnCF3vp3E"
-        bot = telebot.TeleBot(self.token)
+        admin_id = self.admin_id
+        bot = self.bot
         #admin_id = 406407068
         # or add KeyboardButton one row at a time:
         markup = types.ReplyKeyboardMarkup()

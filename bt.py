@@ -42,6 +42,13 @@ class bt(object):
                              , "Здравствуйте "+message.from_user.first_name+ ", мы продаем прекрасные настоящие ёлки в городе Новосибирск. "
                              , reply_markup=main_markup)
 
+        @bot.message_handler(content_types=['contact'])
+        def handle_contacts(message):
+            bot.send_message(message.chat.id,
+                             "Спасибо, мы позвоним вам в ближайшее время!",
+                             reply_markup=main_markup)
+            bot.forward_message(admin_id, message.chat.id, message.message_id)
+
         @bot.message_handler(func=lambda message: True)
         def echo_all(message):
             if (message.text == 'Связаться с нами') : bot.send_message(message.chat.id, "Выберете удобный вам способ", reply_markup=markup)
@@ -63,11 +70,6 @@ class bt(object):
                 bot.send_message(message.chat.id,
                                  "Напишите свое сообщение",
                                  reply_markup=main_markup)
-            elif (message.text == 'Оставить номер'):
-                bot.send_message(message.chat.id,
-                                 "Спасибо, мы позвоним вам в ближайшее время!",
-                                 reply_markup=main_markup)
-
 
             else:
                 #bot.send_message(admin_id, settings.NEW_FEEDBACK)

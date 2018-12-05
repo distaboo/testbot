@@ -66,6 +66,9 @@ class bt(object):
             elif (message.text == 'Оставить номер'):
                 bot.forward_message(admin_id,message.chat.id,
                                  message.message_id)
+                bot.send_message(message.chat.id,
+                                 "Спасибо, мы позвоним вам в ближайшее время!",
+                                 reply_markup=main_markup)
             else:
                 #bot.send_message(admin_id, settings.NEW_FEEDBACK)
 
@@ -85,6 +88,7 @@ class bt(object):
                     bot.send_message(call.message.chat.id, "Ваше сообщение отправлено", reply_markup=main_markup)
                 elif call.data == "no":
                     bot.send_message(admin_id, "@" + call.message.from_user.username + " Не стал отправлять сообщение")
+
 
 
 

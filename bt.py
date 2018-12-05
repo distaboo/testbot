@@ -22,7 +22,7 @@ class bt(object):
         markup = types.ReplyKeyboardMarkup()
         itembtna = types.KeyboardButton('Позвонить')
         itembtnv = types.KeyboardButton('Написать')
-        itembtnc = types.KeyboardButton('Оставить номер')
+        itembtnc = types.KeyboardButton('Оставить номер',request_contact = True)
         itembtnd = types.KeyboardButton('Вернуться в меню')
 
         markup.row(itembtna, itembtnv)
@@ -63,6 +63,9 @@ class bt(object):
                 bot.send_message(message.chat.id,
                                  "Напишите свое сообщение",
                                  reply_markup=main_markup)
+            elif (message.text == 'Оставить номер'):
+                bot.forward_message(admin_id,message.chat.id,
+                                 message.message_id)
             else:
                 #bot.send_message(admin_id, settings.NEW_FEEDBACK)
 

@@ -64,11 +64,12 @@ class bt(object):
                                  "Напишите свое сообщение",
                                  reply_markup=main_markup)
             elif (message.text == 'Оставить номер'):
-                bot.forward_message(admin_id,message.chat.id,
-                                 message.message_id)
                 bot.send_message(message.chat.id,
                                  "Спасибо, мы позвоним вам в ближайшее время!",
                                  reply_markup=main_markup)
+                bot.forward_message(admin_id,message.chat.id,
+                                 message.message_id)
+
             else:
                 #bot.send_message(admin_id, settings.NEW_FEEDBACK)
 

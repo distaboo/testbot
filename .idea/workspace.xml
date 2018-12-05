@@ -30,11 +30,9 @@
         <entry file="file://$PROJECT_DIR$/bt.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#115#4549#0" expanded="false" />
-                <element signature="e#4578#8986#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -166,13 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541585738319</updated>
-    </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1541586882351</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1541586882351</updated>
     </task>
     <task id="LOCAL-00002" summary="1">
       <created>1541863740259</created>
@@ -510,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544004698051</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="1">
+      <created>1544004875571</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1544004875572</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -738,11 +736,9 @@
     <entry file="file://$PROJECT_DIR$/bt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#115#4549#0" expanded="false" />
-            <element signature="e#4578#8986#0" expanded="false" />
           </folding>
         </state>
       </provider>
